@@ -1,0 +1,5 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+newmtl None
+texture Target_Tex Target.bmp
+shader object_shader Tile.vert Tile.frag

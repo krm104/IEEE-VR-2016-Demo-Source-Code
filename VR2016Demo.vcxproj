@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{657A3036-A228-4F84-8304-0889571F28DE}</ProjectGuid>
+    <RootNamespace>VR2016Demo</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Opengl_VS12;C:\LeapSDK\include;$(SolutionDir);C:\Boost;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Boost\lib;C:\Opengl_VS12\lib;C:\LeapSDK\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;glfw3.lib;glfw3dll.lib;liblapack.lib;libblas.lib;Leap.lib;glut32.lib;glew32s.lib;GLSL.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Console</SubSystem>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ARTFunctions.cpp" />
+    <ClCompile Include="CalibrationFunctions.cpp" />
+    <ClCompile Include="DemoMain.cpp" />
+    <ClCompile Include="DTrack\DTrackNet.cpp" />
+    <ClCompile Include="DTrack\DTrackParse.cpp" />
+    <ClCompile Include="DTrack\DTrackParser.cpp" />
+    <ClCompile Include="DTrack\DTrackSDK.cpp" />
+    <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="GLUIFunctions.cpp" />
+    <ClCompile Include="LeapFunctions.cpp" />
+    <ClCompile Include="LeapUtil\LeapScene.cpp" />
+    <ClCompile Include="LeapUtil\LeapUtil.cpp" />
+    <ClCompile Include="LeapUtil\LeapUtilGL.cpp" />
+    <ClCompile Include="LeapUtil\LP.cpp" />
+    <ClCompile Include="RenderFunctions.cpp" />
+    <ClCompile Include="StateFunctions.cpp" />
+    <ClCompile Include="TimerFunctions.cpp" />
+    <ClCompile Include="WindowFunctions.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ARTFunctions.h" />
+    <ClInclude Include="CalibrationFunctions.h" />
+    <ClInclude Include="DTrack\DTrackDataTypes.h" />
+    <ClInclude Include="DTrack\DTrackNet.h" />
+    <ClInclude Include="DTrack\DTrackParse.hpp" />
+    <ClInclude Include="DTrack\DTrackParser.hpp" />
+    <ClInclude Include="DTrack\DTrackSDK.hpp" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="GLUIFunctions.h" />
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="LeapFunctions.h" />
+    <ClInclude Include="LeapUtil\LeapScene.h" />
+    <ClInclude Include="LeapUtil\LeapUtil.h" />
+    <ClInclude Include="LeapUtil\LeapUtilGL.h" />
+    <ClInclude Include="LeapUtil\LP.h" />
+    <ClInclude Include="RenderFunctions.h" />
+    <ClInclude Include="StateFunctions.h" />
+    <ClInclude Include="TimerFunctions.h" />
+    <ClInclude Include="WindowFunctions.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,4 @@
+# Custom Material file for walkway
+newmtl __tile
+texture Calib_Tile Calib_Save_Tile.bmp
+shader object_shader Tile.vert Tile.frag
