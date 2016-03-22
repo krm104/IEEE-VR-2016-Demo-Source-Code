@@ -16,15 +16,14 @@ void BuildMenuState()
 	///Build Calibration Tile
 	float s_loc[] = { -150, 0.0, 450.0 };
 	double s_dir[] = { 0.0, 0.0, 0.0 };
-	/*
+	
 	state_menu_items.menu_tiles.push_back(VOBJECT("Menu_Calib_Tile.obj", s_loc, s_dir, 0.0, 15.0)); 
 	if (state_menu_items.menu_tiles.back().object_model->is_Valid())
 	{
 		state_menu_items.menu_tiles.back().object_model->Load_Uniform(0, "object_shader", "Texture", 0);
 	}
-	*/
-
-	s_loc[0] = 0.0;//150;
+	
+	s_loc[0] = 150;
 	state_menu_items.menu_tiles.push_back(VOBJECT("Menu_Game_Tile.obj", s_loc, s_dir, 0.0, 15.0));
 	if (state_menu_items.menu_tiles.back().object_model->is_Valid())
 	{
@@ -173,11 +172,11 @@ void UpdateMenuState( int reset )
 		{
 			switch (selected_tile)
 			{
-				case 2:
+				case 1:
 					cur_state = STATE_CALIBRATION;
 					UpdateCalibrationState(1);
 					break;
-				case 1:
+				case 2:
 					cur_state = STATE_DEMO1;
 					UpdateDemo1State(1);
 					break;
